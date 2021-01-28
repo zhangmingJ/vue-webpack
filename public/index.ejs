@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="keywords"
+      content=""
+    />
+    <meta
+      name="description"
+      content=""
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <title></title>
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        html, body {
+          width: 100%;
+          height: 100%;
+        }
+
+        body {
+          overflow: hidden;
+          font-family: 'Inconsolata', monospace;
+        }
+
+        .page_loading .arc {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border-top: 2px solid #0088FF;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        animation: rt 2s infinite linear;
+      }
+      .page_loading .arc::before {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border-top: 2px solid #0088FF;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        animation: rt 4s infinite linear reverse;
+        content: "";
+      }
+      .page_loading .arc::after {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        border-top: initial;
+        border-left: initial;
+        border-right: initial;
+        animation: cw 1s infinite;
+        content: "";
+        background: #0088FF;
+      }
+
+      .page_loading h1 {
+        position: absolute;
+        height: 40px;
+        margin: auto;
+        top: 200px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 0.1em;
+        font-size: 14px;
+        font-weight: lighter;
+        color: #0b0b14;
+      }
+      .page_loading h1 span {
+        display: none;
+      }
+      .page_loading h1::after {
+        animation: txt 5s infinite;
+        content: "";
+      }
+
+      @keyframes rt {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes cw {
+        0% {
+          width: 0;
+          height: 0;
+        }
+        75% {
+          width: 40px;
+          height: 40px;
+        }
+        100% {
+          width: 0;
+          height: 0;
+        }
+      }
+      @keyframes txt {
+        0% {
+          content: "页面加载中.";
+        }
+        50% {
+          content: "页面加载中..";
+        }
+        100% {
+          content: "页面加载中...";
+        }
+      }
+    </style>
+    <%= manifest %> <%= dll %>
+  </head>
+  <body class="app">
+    <div id="app"></div>
+    <div class="page_loading">
+        <div class="arc"></div>
+        <h1><span>页面加载中</span></h1>
+    </div>
+  </body>
+</html>

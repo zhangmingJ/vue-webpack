@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "baseUrl": "./src",
+    "experimentalDecorators": true,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "experimentalDecorators": true,
+      "jsx": true
+    },
+    "paths": {
+      "src/*": ["*"],
+      "util/*": ["util/*"],
+      "store/*": ["store/*"],
+      "config/*": ["config/*"],
+      "view/*": ["view/*"],
+      "assets/*": ["assets/*"],
+      "components/*": ["components/*"],
+      "router/*": ["router/*"]
+    }
+  },
+  "include": ["src/**/*"]
+}

@@ -1,0 +1,100 @@
+{
+  "name": "vue-cli",
+  "version": "1.0.0",
+  "description": "vue脚手架",
+  "scripts": {
+    "start": "node webpack/server.js",
+    "server": "cross-env NODE_ENV=production node webpack/server.js",
+    "prettier": "prettier --write \"{src,mock}/**/*.{js,jsx,css,less}\"",
+    "build:analysis": "cross-env NODE_ENV=production webpack -p --progress --config webpack/webpack.prd.config.js --profile --analysis --colors --display errors-only",
+    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prd.config.js"
+  },
+  "author": "snrc",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "axios": "0.18.0",
+    "iview": "3.5.0",
+    "moment": "2.22.2",
+    "qs": "6.6.0",
+    "v-click-outside-x": "^4.0.19",
+    "vue": "^2.6.12",
+    "vue-router": "^3.4.9",
+    "vuex": "^3.5.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "@babel/plugin-proposal-class-properties": "7.2.1",
+    "@babel/plugin-proposal-decorators": "7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "7.2.0",
+    "@babel/plugin-transform-runtime": "7.2.0",
+    "@babel/preset-env": "7.2.0",
+    "@babel/preset-react": "7.0.0",
+    "@babel/runtime": "7.2.0",
+    "@vue/eslint-config-standard": "^3.0.0-beta.10",
+    "@vue/babel-preset-app": "^4.5.11",
+    "@vue/test-utils": "^1.1.1",
+    "autoprefixer": "9.4.2",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "8.0.4",
+    "babel-plugin-import": "1.13.1",
+    "clean-webpack-plugin": "1.0.0",
+    "copy-webpack-plugin": "4.6.0",
+    "cross-env": "^5.2.1",
+    "css-loader": "2.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^3.0.4",
+    "eslint-plugin-cypress": "^2.11.2",
+    "eslint-plugin-html": "^6.1.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-vue": "^6.2.2",
+    "express": "4.16.4",
+    "file-loader": "2.0.0",
+    "happypack": "5.0.0",
+    "html-loader": "0.5.5",
+    "html-webpack-plugin": "3.2.0",
+    "husky": "^3.1.0",
+    "less": "^3.12.2",
+    "less-loader": "^7.1.0",
+    "lint-staged": "^6.1.1",
+    "mini-css-extract-plugin": "0.5.0",
+    "postcss-loader": "3.0.0",
+    "preload-webpack-plugin": "3.0.0-alpha.1",
+    "prettier": "^1.19.1",
+    "progress-bar-webpack-plugin": "1.12.0",
+    "rimraf": "^3.0.2",
+    "search-list-vue": "^1.0.1",
+    "style-loader": "0.23.1",
+    "terser-webpack-plugin": "4.2.3",
+    "url-loader": "1.1.2",
+    "vue-eslint-parser": "^5.0.0",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^4.27.1",
+    "webpack-bundle-analyzer": "3.0.3",
+    "webpack-cli": "^4.4.0",
+    "webpack-dev-middleware": "3.4.0",
+    "webpack-hot-middleware": "2.24.3",
+    "webpack-merge": "4.2.1",
+    "webpack-parallel-uglify-plugin": "1.1.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue,json,css,less,md}": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}

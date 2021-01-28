@@ -1,0 +1,8 @@
+{
+  "short_name": "数据易道",
+  "name": "数据易道",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#222222",
+  "background_color": "#222222"
+}
