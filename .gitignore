@@ -8,6 +8,7 @@ yarn-error.log*
 
 # build files
 dist
+public/dll
 
 # history files
 .history
